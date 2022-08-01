@@ -15,18 +15,20 @@ let contenido_en = `  <div class="cont-menu">
                 <li><a href="#page-portfolio">My portfolio</a></li>
                 <li><a href="#page-contact">Contact</a></li>
             </ul>
-            
+           
+
+
+
+
             </aside>
             <scroll-container>
                 <scroll-page id="page-header">
                     <section class="page-header ">
                         <h2><span>¡Hello</span> word !</h2>
                         <p>My name is <span >Saul De la fuente</span> and I am : </p> <p><span class="text-type"></span></p>
-                        <p> I like to build integrated projects that combine electronics, programing and automatization.</p>
-                        <p>I have a great experience in the design of electronic circuits, telemetry applications , electronic instrumentation and
-                        programing languages.</p>
-                        <p>As a web developer I seek to integrate my experience in the electronic industry to develop useful applications and
-                        integrate that with IoT devices. </p>
+                        <p>  My interest is in building's integrated projects that combine electronics, computer programing and automatic control (robotic).</p>
+                        <p>I have experience in  designing  electronic circuits, telemetry applications , electronic instrumentation and computer programing languages.</p>
+                        <p>As a web developer I focus in integrating my experience from  electronic industry to develop useful applications and  integration with IoT devices. </p>
                     <div class="button-container-1 small">
                         <span class="mas">
                             <i class="fa-solid fa-yin-yang"></i>Click here! 
@@ -400,7 +402,7 @@ let contenido_es = ` <div class="cont-menu">
                         <h2><span>¡Hola</span> mundo!</h2>
                         <p>Me llamo <span >Saul De la fuente</span> y soy:</p> <p><span class="text-type"></span></p>
                         <p> Me gusta desarrollar proyectos integrales que tenga que ver con electrónica, programación y automatización.</p>
-                        <p>Cuento con con amplia
+                        <p>Cuento con amplia
                         experiencia en el diseño de circuitos electrónicos,
                         aplicaciones de telemetría, instrumentación
                         electrónica y lenguajes de programación.</p>
@@ -756,9 +758,11 @@ let en_ver = document.getElementById('en-ver');
 let es_ver = document.getElementById('es-ver');
 let main = document.getElementById('cont');
 let inicio = document.getElementById('inicio');
+let cohete = document.getElementById('cohete');
  
 en_ver.addEventListener('click', mostrarEn);
 es_ver.addEventListener('click', mostrarEs);
+cohete.addEventListener('click', subir);
 mostrarEn();  
 callMenu();
 function mostrarEn() {
@@ -811,6 +815,13 @@ function callMenu() {
     
     
 }  
+function subir() {
+    console.log('Estamos en el cohete');
+    window.scroll({
+        top: -20,
+        behavior:"smooth"
+    })
+}
 
 
 

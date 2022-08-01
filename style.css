@@ -103,6 +103,17 @@ html{
     vertical-align: middle;
     align-items: flex-end;
 }
+.nvp{
+    position: fixed;
+    z-index: 200;
+    right: 3%;
+    bottom: 10vh;
+    cursor: pointer;
+}
+.nvp img{
+    width: 3rem;
+    height: 5rem;
+}
 main.container {
     align-items: center;
     padding: 2rem 4rem;
