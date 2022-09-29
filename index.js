@@ -1,3 +1,10 @@
+const today = new Date();
+
+const expElectronica = today.getFullYear() - 2015;
+const expSoftwareDeveloper = today.getFullYear() - 2018;
+const expWebDEveloper = today.getFullYear() - 2020;
+
+    
 let contenido_en = `  <div class="cont-menu">
             <aside class="sidebar-menu">
 
@@ -168,15 +175,15 @@ let contenido_en = `  <div class="cont-menu">
                             </div>
                             <div class="experience">
                                 <div class="card">
-                                    <h3>+7 years </h3>
+                                    <h3>+ ${expElectronica} years </h3>
                                     <p>Experience in the electronic industry.</p>
                                 </div>
                                 <div class="card">
-                                    <h3>+4 years </h3>
+                                    <h3>+ ${expSoftwareDeveloper} years </h3>
                                     <p>Experience as a software developer</p>
                                 </div>
                                 <div class="card">
-                                    <h3>+2 years</h3>
+                                    <h3>+ ${expWebDEveloper} years</h3>
                                     <p>Experience as a web developer</p>
                                 </div>
                             </div>
@@ -329,11 +336,11 @@ let contenido_en = `  <div class="cont-menu">
                             </div>
                             <div class="button-container-1">
                                 <span class="mas">
-                                <i class="fa-brands fa-github"></i> github.com/Luasjcr3543
+                                <i class="fa-brands fa-github"></i> github.com/LuasKF
                                 </span>
                                 <button id='work' type="button" name="Hover">
                                     <span>
-                                        <a href="https://github.com/Luasjcr3543" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                        <a href="https://github.com/LuasKF" target="_blank"><i class="fa-brands fa-github"></i></a>
                                     </span>
                                 </button>
                             </div>
@@ -705,11 +712,11 @@ let contenido_es = ` <div class="cont-menu">
                             </div>
                             <div class="button-container-1">
                                 <span class="mas">
-                                <i class="fa-brands fa-github"></i> github.com/Luasjcr3543
+                                <i class="fa-brands fa-github"></i> github.com/LuasKF
                                 </span>
                                 <button id='work' type="button" name="Hover">
                                     <span>
-                                        <a href="https://github.com/Luasjcr3543" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                        <a href="https://github.com/LuasKF" target="_blank"><i class="fa-brands fa-github"></i></a>
                                     </span>
                                 </button>
                             </div>
@@ -759,6 +766,12 @@ let es_ver = document.getElementById('es-ver');
 let main = document.getElementById('cont');
 let inicio = document.getElementById('inicio');
 let cohete = document.getElementById('cohete');
+let details = navigator.userAgent;
+
+//Verificar que tipo de dispositivo esta navegando por la pagina
+let regexp = /android|iphone|kindle|ipad/i;
+let isMobileDevice = regexp.test(details);
+
  
 en_ver.addEventListener('click', mostrarEn);
 es_ver.addEventListener('click', mostrarEs);
@@ -770,11 +783,20 @@ inicio.innerHTML = 'ingles';
     main.innerHTML = '';
     main.innerHTML = contenido_en;
     console.log('Version en ingles');
+    if (isMobileDevice) {
     let type = new Typed('.text-type', {
+                strings: ['an Engineer in electronics and a Fronted developer'],
+                typeSpeed: 70,
+                loop: false
+    });
+        } else {
+        let type = new Typed('.text-type', {
                 strings: ['an Engineer in electronics', ' a Fronted developer', ''],
                 typeSpeed: 70,
                 loop: true
-    });
+            });
+        }
+    
     callMenu();
 
     return;
@@ -784,12 +806,23 @@ inicio.innerHTML = 'español';
     
 main.innerHTML = '';
 main.innerHTML = contenido_es;
-console.log('Version en español');
-let type = new Typed('.text-type', {
+    console.log('Version en español');
+    if (isMobileDevice) { 
+        let type = new Typed('.text-type', {
+    strings: ['Ingeniero en electrónica y Fronted developer'],
+    typeSpeed: 70,
+    loop: false
+});
+
+    } else {
+        let type = new Typed('.text-type', {
     strings: ['Ingeniero en electrónica', 'Fronted developer', 'Desarrollador de software'],
     typeSpeed: 70,
     loop: true
 });
+        
+    }
+
 callMenu();
     return;
 
